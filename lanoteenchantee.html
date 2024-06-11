@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ohmyfood</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+            integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+            crossorigin="anonymous" referrerpolicy="no-referrer">
+        <link rel="stylesheet" href="./css/style.css">
+    </head>
+    <body>
+        <div class="bookiPage">
+            <header>
+                <div class="imgHeaderDiv">
+                    <a href="./">
+                        <i class="fa-solid fa-arrow-left iconBackHeader"></i>
+                    </a>
+                    <img src="./images/logo/ohmyfood.png" alt="logo" class="logoHeader">
+                </div>
+            </header>
+            <main class="mainMenuRestaurant">
+                <div class="restaurantPictureContainer">
+                    <img class="restaurantMenuPicture" src="./images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="restaurant1">
+                </div>
+                <div class="restaurantMenuSection">
+                    <h1 class="restaurantMenuName">La note enchantée</h1>
+                    <input type="checkbox" id="toggleHeart" class="hidden-checkbox">
+                    <label for="toggleHeart">
+                        <i class="fa-regular fa-heart heartRestaurantPage"></i>
+                    </label>
+                    <section class="entryPlate">
+                        <h2 class="entryPlateTxt">ENTRÉES</h2>
+                        <div class="menuBar"></div>
+                        <div class="aPlateDiv2">
+                            <div class="aPlateContent">
+                                <p class="aPlateName">Ravioles de foie gras</p>
+                                <div class="subTxtDiv">
+                                    <p class="aPlateSubName2">Accompagnées de leur crème à la truffe</p>
+                                    <p class="aPlatePrice2">25€</p>
+                                </div>
+                            </div>
+                            <div class="aPlateSelected">
+                                <i class="fa-solid fa-circle-check selectedIcon"></i>
+                            </div>
+                        </div>
+                        <div class="aPlateDiv2">
+                            <div class="aPlateContent">
+                                <p class="aPlateName">Caviar osciètre</p>
+                                <div class="subTxtDiv">
+                                    <p class="aPlateSubName2">Sur blini à la farine de blé noir</p>
+                                    <p class="aPlatePrice2">35€</p>
+                                </div>
+                            </div>
+                            <div class="aPlateSelected">
+                                <i class="fa-solid fa-circle-check selectedIcon"></i>
+                            </div>
+                        </div>
+                        <div class="aPlateDiv2">
+                            <div class="aPlateContent">
+                                <p class="aPlateName">Homard et espuma de potiron</p>
+                                <div class="subTxtDiv">
+                                    <p class="aPlateSubName2">Marinés aux zestes d'orange</p>
+                                    <p class="aPlatePrice2">20€</p>
+                                </div>
+                            </div>
+                            <div class="aPlateSelected">
+                                <i class="fa-solid fa-circle-check selectedIcon"></i>
+                            </div>
+                        </div>
+                        <div class="aPlateDiv2">
+                            <div class="aPlateContent">
+                                <p class="aPlateName">Foie gras de canard cuit entier</p>
+                                <div class="subTxtDiv">
+                                    <p class="aPlateSubName2">Confiture de figue et pain toasté</p>
+                                    <p class="aPlatePrice2">35€</p>
+                                </div>
+                            </div>
+                            <div class="aPlateSelected">
+                                <i class="fa-solid fa-circle-check selectedIcon"></i>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="mainCoursePlate">
+                        <h2 class="mainCoursePlateTxt">PLATS</h2>
+                        <div class="menuBar"></div>
+                        <div class="aPlateDiv2">
+                            <div class="aPlateContent">
+                                <p class="aPlateName">Noix de coquilles Saint-Jacques</p>
+                                <div class="subTxtDiv">
+                                    <p class="aPlateSubName2">Sur lit de purée de céleri-rave</p>
+                                    <p class="aPlatePrice2">40€</p>
+                                </div>
+                            </div>
+                            <div class="aPlateSelected">
+                                <i class="fa-solid fa-circle-check selectedIcon"></i>
+                            </div>
+                        </div>
+                        <div class="aPlateDiv2">
+                            <div class="aPlateContent">
+                                <p class="aPlateName">Langoustine poêlée</p>
+                                <div class="subTxtDiv">
+                                    <p class="aPlateSubName2">Purée de patate douce</p>
+                                    <p class="aPlatePrice2">35€</p>
+                                </div>
+                            </div>
+                            <div class="aPlateSelected">
+                                <i class="fa-solid fa-circle-check selectedIcon"></i>
+                            </div>
+                        </div>
+                        <div class="aPlateDiv2">
+                            <div class="aPlateContent">
+                                <p class="aPlateName">Mijoté de queue de bœuf</p>
+                                <div class="subTxtDiv">
+                                    <p class="aPlateSubName2">Et riz sauvage aux zestes de citron</p>
+                                    <p class="aPlatePrice2">44€</p>
+                                </div>
+                            </div>
+                            <div class="aPlateSelected">
+                                <i class="fa-solid fa-circle-check selectedIcon"></i>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="dessertPlate">
+                        <h2 class="dessertPlateTxt">DESSERTS</h2>
+                        <div class="menuBar"></div>
+                        <div class="aPlateDiv2">
+                            <div class="aPlateContent">
+                                <p class="aPlateName">Macaron noisette et chocolat</p>
+                                <div class="subTxtDiv">
+                                    <p class="aPlateSubName2">Glace au caramel brun et sel de Guérande</p>
+                                    <p class="aPlatePrice2">18€</p>
+                                </div>
+                            </div>
+                            <div class="aPlateSelected">
+                                <i class="fa-solid fa-circle-check selectedIcon"></i>
+                            </div>
+                        </div>
+                        <div class="aPlateDiv2">
+                            <div class="aPlateContent">
+                                <p class="aPlateName">Baba au rhum revisité</p>
+                                <div class="subTxtDiv">
+                                    <p class="aPlateSubName2">Avec son coulis de citron</p>
+                                    <p class="aPlatePrice2">22€</p>
+                                </div>
+                            </div>
+                            <div class="aPlateSelected">
+                                <i class="fa-solid fa-circle-check selectedIcon"></i>
+                            </div>
+                        </div>
+                        <div class="aPlateDiv2">
+                            <div class="aPlateContent">
+                                <p class="aPlateName">Tarte au citron meringuée</p>
+                                <div class="subTxtDiv">
+                                    <p class="aPlateSubName2">Déstructurée</p>
+                                    <p class="aPlatePrice2">23€</p>
+                                </div>
+                            </div>
+                            <div class="aPlateSelected">
+                                <i class="fa-solid fa-circle-check selectedIcon"></i>
+                            </div>
+                        </div>
+                    </section>
+                    <button class="bookButton">Commander</button>
+                </div>
+            </main>
+            <footer class="footer">
+                <img src="./images/logo/ohmyfood.png" alt="logo" class="logoFooter">
+                <div class="footerTxtContainer">
+                    <div class="footerWithIcon">
+                        <i class="fa-solid fa-utensils iconFooter"></i>
+                        <p class="footerTxt">Proposer un restaurant</p>
+                    </div>
+                    <div class="footerWithIcon">
+                        <i class="fa-solid fa-handshake-angle iconFooter"></i>
+                        <p class="footerTxt">Devenir partenaire</p>
+                    </div>
+                    <p class="footerTxt">Mentions légales</p>
+                    <p class="footerTxt">Contact</p>
+                </div>
+            </footer>
+        </div>
+    </body>
+</html>

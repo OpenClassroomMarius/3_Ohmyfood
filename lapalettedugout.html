@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ohmyfood</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+            integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+            crossorigin="anonymous" referrerpolicy="no-referrer">
+        <link rel="stylesheet" href="./css/style.css">
+    </head>
+    <body>
+        <div class="bookiPage">
+            <header>
+                <div class="imgHeaderDiv">
+                    <a href="./">
+                        <i class="fa-solid fa-arrow-left iconBackHeader"></i>
+                    </a>
+                    <img src="./images/logo/ohmyfood.png" alt="logo" class="logoHeader">
+                </div>
+            </header>
+            <main class="mainMenuRestaurant">
+                <div class="restaurantPictureContainer">
+                    <img class="restaurantMenuPicture" src="./images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="restaurant1">
+                </div>
+                <div class="restaurantMenuSection">
+                    <h1 class="restaurantMenuName">La palette du goût</h1>
+                    <input type="checkbox" id="toggleHeart" class="hidden-checkbox">
+                    <label for="toggleHeart">
+                        <i class="fa-regular fa-heart heartRestaurantPage"></i>
+                    </label>
+                    <section class="entryPlate">
+                        <h2 class="entryPlateTxt">ENTRÉES</h2>
+                        <div class="menuBar"></div>
+                        <div class="aPlateDiv2">
+                            <div class="aPlateContent">
+                                <p class="aPlateName">Fricassée d'escargots</p>
+                                <div class="subTxtDiv">
+                                    <p class="aPlateSubName2">Au piment d'Espelette</p>
+                                    <p class="aPlatePrice2">25€</p>
+                                </div>
+                            </div>
+                            <div class="aPlateSelected">
+                                <i class="fa-solid fa-circle-check selectedIcon"></i>
+                            </div>
+                        </div>
+                        <div class="aPlateDiv2">
+                            <div class="aPlateContent">
+                                <p class="aPlateName">Foie gras de canard mi-cuit</p>
+                                <div class="subTxtDiv">
+                                    <p class="aPlateSubName2">Et ses copeaux de truffe noire</p>
+                                    <p class="aPlatePrice2">35€</p>
+                                </div>
+                            </div>
+                            <div class="aPlateSelected">
+                                <i class="fa-solid fa-circle-check selectedIcon"></i>
+                            </div>
+                        </div>
+                        <div class="aPlateDiv2">
+                            <div class="aPlateContent">
+                                <p class="aPlateName">Œuf au plat</p>
+                                <div class="subTxtDiv">
+                                    <p class="aPlateSubName2">Assaisonné à la truffe sur lit de caviar</p>
+                                    <p class="aPlatePrice2">20€</p>
+                                </div>
+                            </div>
+                            <div class="aPlateSelected">
+                                <i class="fa-solid fa-circle-check selectedIcon"></i>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="mainCoursePlate">
+                        <h2 class="mainCoursePlateTxt">PLATS</h2>
+                        <div class="menuBar"></div>
+                        <div class="aPlateDiv2">
+                            <div class="aPlateContent">
+                                <p class="aPlateName">Filet de bœuf aux herbes</p>
+                                <div class="subTxtDiv">
+                                    <p class="aPlateSubName2">Accompagné de sa ribambelle de légumes</p>
+                                    <p class="aPlatePrice2">40€</p>
+                                </div>
+                            </div>
+                            <div class="aPlateSelected">
+                                <i class="fa-solid fa-circle-check selectedIcon"></i>
+                            </div>
+                        </div>
+                        <div class="aPlateDiv2">
+                            <div class="aPlateContent">
+                                <p class="aPlateName">Parmentier de queue de bœuf</p>
+                                <div class="subTxtDiv">
+                                    <p class="aPlateSubName2">À la truffe noire sur sa purée de panais</p>
+                                    <p class="aPlatePrice2">35€</p>
+                                </div>
+                            </div>
+                            <div class="aPlateSelected">
+                                <i class="fa-solid fa-circle-check selectedIcon"></i>
+                            </div>
+                        </div>
+                        <div class="aPlateDiv2">
+                            <div class="aPlateContent">
+                                <p class="aPlateName">Filet de turbot</p>
+                                <div class="subTxtDiv">
+                                    <p class="aPlateSubName2">Aux agrumes</p>
+                                    <p class="aPlatePrice2">44€</p>
+                                </div>
+                            </div>
+                            <div class="aPlateSelected">
+                                <i class="fa-solid fa-circle-check selectedIcon"></i>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="dessertPlate">
+                        <h2 class="dessertPlateTxt">DESSERTS</h2>
+                        <div class="menuBar"></div>
+                        <div class="aPlateDiv2">
+                            <div class="aPlateContent">
+                                <p class="aPlateName">Paris-Brest</p>
+                                <div class="subTxtDiv">
+                                    <p class="aPlateSubName2">Revisité</p>
+                                    <p class="aPlatePrice2">18€</p>
+                                </div>
+                            </div>
+                            <div class="aPlateSelected">
+                                <i class="fa-solid fa-circle-check selectedIcon"></i>
+                            </div>
+                        </div>
+                        <div class="aPlateDiv2">
+                            <div class="aPlateContent">
+                                <p class="aPlateName">Macaron au chocolat d'exception</p>
+                                <div class="subTxtDiv">
+                                    <p class="aPlateSubName2">Et glace à la vanille de Madagascar</p>
+                                    <p class="aPlatePrice2">22€</p>
+                                </div>
+                            </div>
+                            <div class="aPlateSelected">
+                                <i class="fa-solid fa-circle-check selectedIcon"></i>
+                            </div>
+                        </div>
+                        <div class="aPlateDiv2">
+                            <div class="aPlateContent">
+                                <p class="aPlateName">Mousse au chocolat</p>
+                                <div class="subTxtDiv">
+                                    <p class="aPlateSubName2">Au piment d'Espelette et à la truffe noire</p>
+                                    <p class="aPlatePrice2">23€</p>
+                                </div>
+                            </div>
+                            <div class="aPlateSelected">
+                                <i class="fa-solid fa-circle-check selectedIcon"></i>
+                            </div>
+                        </div>
+                    </section>
+                    <button class="bookButton">Commander</button>
+                </div>
+            </main>
+            <footer class="footer">
+                <img src="./images/logo/ohmyfood.png" alt="logo" class="logoFooter">
+                <div class="footerTxtContainer">
+                    <div class="footerWithIcon">
+                        <i class="fa-solid fa-utensils iconFooter"></i>
+                        <p class="footerTxt">Proposer un restaurant</p>
+                    </div>
+                    <div class="footerWithIcon">
+                        <i class="fa-solid fa-handshake-angle iconFooter"></i>
+                        <p class="footerTxt">Devenir partenaire</p>
+                    </div>
+                    <p class="footerTxt">Mentions légales</p>
+                    <p class="footerTxt">Contact</p>
+                </div>
+            </footer>
+        </div>
+    </body>
+</html>
