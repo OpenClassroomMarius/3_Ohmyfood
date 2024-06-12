@@ -611,3 +611,110 @@ linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15));
 linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15));
   box-shadow: 0px 4px 15px 0px #00000059;
 }
+
+.footerMobile{
+  display: none;
+}
+
+@media (min-width: 1100px) {
+  .findMenuTitle{
+    font-size: 40px;
+    font-weight: 700;
+  }
+  .fonctionnementSection{
+    padding-left: 0;
+    padding-right: 0;
+    width: 1080px;
+  }
+  .fonctionnementDivContainer{
+    display: flex;
+    justify-content: space-between;
+  }
+  .fonctionnementSection{
+    margin: auto;
+  }
+  .fonctionnementPart{
+    width: 332px;
+  }
+  .restaurantHolder{
+    width: 1080px;
+    margin: auto;
+  }
+  .allRestaurants{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 100px;
+    row-gap: 50px;
+  }
+  .restaurantSection{
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 30px;
+    padding-bottom: 12px;
+  }
+  .footerMobile{
+    display: block;
+  }
+  .footerDesktop{
+    display: none;
+  }
+  .footerTxtContainer{
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 64px;
+    padding-bottom: 30px;
+    margin-top: 0;
+  }
+  .footerWithIcon{
+    width: 190px;
+    margin-right: 16px;
+  }
+  .footerTxt{
+    width: 164px;
+  }
+  .logoFooter{
+    height: 27px;
+    margin-right: 70px;
+  }
+  .footer{
+    padding: 0;
+  }
+  /* restaurant pages */
+  .restaurantMenuName{
+    text-align: center;
+  }
+  .mainMenuRestaurant{
+    width: 1055px;
+    margin: auto;
+  }
+  .restaurantPictureContainer{
+    width: 100%;
+    height: 383px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 63px;
+  }
+  .restaurantMenuPicture{
+    width: 100%;
+  }
+  .restaurantMenuSection{
+    width: 1055px;
+    padding-left: 210.5px;
+    padding-right: 210.5px;
+    margin: 0 auto;
+    background-color: #F6F6F6;
+    margin-top: 383px;
+  }
+  .heartRestaurantPage {
+    position: relative;
+    margin-top: 0;
+    margin-right: 0;
+    margin-left: 24px;
+  }
+  .topName{
+    display: flex;
+    align-items: baseline;
+    justify-content: center
+  }
+}
