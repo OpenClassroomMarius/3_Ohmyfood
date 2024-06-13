@@ -1,5 +1,45 @@
+// Variables
+$font-primary: 'Roboto', sans-serif;
+$color-primary: #9356dc;
+$color-secondary: #ff79da;
+$color-light: #f6f6f6;
+$color-dark: #353535;
+$color-gray: #eaeaea;
+$color-white: #fff;
+$color-black: #000;
+
+$font-size-base: 16px;
+$font-size-large: 24px;
+$font-size-medium: 18px;
+$font-size-small: 14px;
+
+$transition-duration: 0.25s;
+$z-index-loader: 1000;
+
+// Mixins
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin box-shadow($x, $y, $blur, $spread, $color) {
+  box-shadow: $x $y $blur $spread $color;
+}
+
+@mixin transition($properties...) {
+  @each $property in $properties {
+    transition: $property $transition-duration ease;
+  }
+}
+
+@mixin animation($name, $duration, $timing: ease, $delay: 0s, $iteration: 1, $direction: normal) {
+  animation: $name $duration $timing $delay $iteration $direction;
+}
+
+// Base Styles
 html {
-  font-family: "Roboto", sans-serif;
+  font-family: $font-primary;
   text-align: center;
 }
 
@@ -17,61 +57,65 @@ button {
 
 a {
   text-decoration: none;
-  color: #000;
+  color: $color-black;
 }
 
+// Loader
 #loader {
   position: fixed;
   width: 100%;
   height: 100%;
-  background: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 24px;
-  color: #353535;
-  animation: fadeOut 0.25s forwards 0.25s 1 normal;
-  z-index: 1000;
+  background: $color-white;
+  @include flex-center;
+  font-size: $font-size-large;
+  color: $color-dark;
+  @include animation(fadeOut, 0.25s, forwards, 0.25s);
+  z-index: $z-index-loader;
   overflow: hidden;
 }
 
 #content {
   opacity: 0;
-  animation: fadeIn 0.25s forwards 0.5s 1 normal;
+  @include animation(fadeIn, 0.25s, forwards, 0.5s);
 }
 
+// Keyframes
 @keyframes fadeOut {
   to {
     opacity: 0;
     visibility: hidden;
   }
 }
+
 @keyframes fadeIn {
   to {
     opacity: 1;
   }
 }
+
 @keyframes spinner-c7wet2 {
   100% {
     transform: rotate(1turn);
   }
 }
+
+// Spinner
 .spinner {
   width: 56px;
   height: 56px;
   border-radius: 50%;
-  background: radial-gradient(farthest-side, #9356dc 94%, transparent) top/9px 9px no-repeat, conic-gradient(transparent 30%, #9356dc);
-  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 9px), #000 0);
-  animation: spinner-c7wet2 0.8s linear 0s infinite normal;
+  background: radial-gradient(farthest-side, $color-primary 94%, transparent) top/9px 9px no-repeat,
+              conic-gradient(transparent 30%, $color-primary);
+  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 9px), $color-black 0);
+  @include animation(spinner-c7wet2, 0.8s, linear, 0s, infinite);
 }
 
+// Header
 .imgHeaderDiv {
   width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flex-center;
   height: 63px;
-  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
+  @include box-shadow(0px, 2px, 4px, 0px, rgba(0, 0, 0, 0.15));
   position: relative;
   z-index: 2;
 }
@@ -84,11 +128,9 @@ a {
 .locationHeader {
   height: 50px;
   width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #eaeaea;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  @include flex-center;
+  background-color: $color-gray;
+  @include box-shadow(0px, 4px, 4px, 0px, rgba(0, 0, 0, 0.25));
   z-index: 1;
   position: relative;
   align-items: center;
@@ -97,33 +139,32 @@ a {
 .locationCenterContainer {
   width: 100%;
   margin: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flex-center;
 }
 
 .txtLocationHeader {
-  font-size: 16px;
-  color: #353535;
+  font-size: $font-size-base;
+  color: $color-dark;
   font-weight: 500;
   margin-left: 17px;
 }
 
+// Find Menu Section
 .findMenuSection {
-  background-color: #f6f6f6;
+  background-color: $color-light;
   padding-top: 39px;
   padding-bottom: 57px;
 }
 
 .findMenuTitle {
   font-weight: 700;
-  font-size: 24px;
+  font-size: $font-size-large;
   margin-bottom: 16px;
 }
 
 .findMenuDescription {
   font-size: 18px;
-  color: #353535;
+  color: $color-dark;
   font-weight: 300;
 }
 
@@ -132,31 +173,31 @@ a {
   width: 218px;
   height: 50px;
   border-radius: 25px;
-  background: linear-gradient(193.33deg, #9356dc -11.44%, #ff79da 123.93%);
-  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
-  color: #fff;
-  font-family: "Roboto", sans-serif;
+  background: linear-gradient(193.33deg, $color-primary -11.44%, $color-secondary 123.93%);
+  @include box-shadow(0px, 4px, 10px, 0px, rgba(0, 0, 0, 0.25));
+  color: $color-white;
+  font-family: $font-primary;
   font-weight: 500;
-  font-size: 16px;
+  font-size: $font-size-base;
   margin: auto;
   margin-top: 27px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flex-center;
 }
 
 .findMenuButton:hover {
-  background: linear-gradient(200.64deg, #9356dc -5.2%, #ff79da 110.74%), linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15));
-  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.35);
+  background: linear-gradient(200.64deg, $color-primary -5.2%, $color-secondary 110.74%),
+              linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15));
+  @include box-shadow(0px, 4px, 15px, 0px, rgba(0, 0, 0, 0.35));
 }
 
+// Fonctionnement Section
 .fonctionnementSection {
   padding: 20px;
   padding-bottom: 43px;
 }
 
-.fonctionnementCenterContainer {
-  display: flex;
+.fonctionnementCenterContainer{
+    display: flex;
 }
 
 .fonctionnementTitle {
@@ -168,19 +209,17 @@ a {
 .fonctionnementPart {
   width: 100%;
   height: 72px;
-  background-color: #f6f6f6;
+  background-color: $color-light;
   border-radius: 20px;
-  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include box-shadow(0px, 4px, 15px, 0px, rgba(0, 0, 0, 0.15));
+  @include flex-center;
   margin-bottom: 25px;
   position: relative;
   cursor: pointer;
 }
 
-.fonctionnementPart:hover, .selectedIcon {
-  color: #9356dc;
+.fonctionnementPart:hover, .selectedIcon{
+    color: #9356dc;
 }
 
 .numberBubble {
@@ -191,35 +230,34 @@ a {
   top: 50%;
   transform: translateY(-50%) translateX(-12.5px);
   border-radius: 50%;
-  background-color: #9356dc;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background-color: $color-primary;
+  @include flex-center;
 }
 
 .numberFonctionnement {
   font-weight: 500;
-  font-size: 14px;
+  font-size: $font-size-small;
   margin: auto;
-  color: #fff;
+  color: $color-white;
 }
 
 .fonctionnementPartTitle {
-  font-size: 18px;
+  font-size: $font-size-medium;
   font-weight: 500;
-  color: #353535;
+  color: $color-dark;
   margin-left: 23px;
   width: 211px;
   text-align: left;
 }
 
+// Restaurant Section
 .restaurantSection {
-  background-color: #f6f6f6;
+  background-color: $color-light;
   padding: 54px 17px 57px 18px;
 }
 
 .restaurantTitle {
-  font-size: 24px;
+  font-size: $font-size-large;
   font-weight: 700;
   text-align: left;
   margin-bottom: 24px;
@@ -228,10 +266,10 @@ a {
 .restaurant {
   width: 100%;
   border-radius: 15px;
-  background-color: #fff;
+  background-color: $color-white;
   margin-bottom: 18px;
   padding-bottom: 12px;
-  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1);
+  @include box-shadow(0px, 4px, 15px, 0px, rgba(0, 0, 0, 0.1));
   position: relative;
 }
 
@@ -247,12 +285,11 @@ a {
   height: 174px;
   width: 100%;
   border-radius: 15px 15px 0 0;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .restaurantName {
-  font-size: 18px;
+  font-size: $font-size-medium;
   font-weight: 700;
   text-align: left;
   margin-top: 16px;
@@ -272,23 +309,24 @@ a {
   position: absolute;
   top: 0;
   right: 0;
-  font-size: 14px;
+  font-size: $font-size-small;
   margin-top: 12px;
   margin-right: 12px;
   background-color: #99E2D0;
-  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
+  @include box-shadow(0px, 2px, 4px, 0px, rgba(0, 0, 0, 0.15));
   border-radius: 2px;
   padding: 7px 9px;
 }
 
+// Footer
 .footer {
-  background-color: #353535;
+  background-color: $color-dark;
   padding: 22px 25px;
-  color: #fff;
+  color: $color-white;
   text-align: left;
 }
 
-.footerDesktop {
+.footerDesktop{
   text-align: left;
 }
 
@@ -299,12 +337,12 @@ a {
 
 .footerTxtContainer {
   margin-top: 16px;
-  font-size: 16px;
+  font-size: $font-size-base;
   font-weight: 400;
   cursor: pointer;
 }
 
-.flexStatus {
+.flexStatus{
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -315,6 +353,7 @@ a {
   cursor: pointer;
 }
 
+// Restaurant Page
 .restaurantPictureContainer {
   width: 100%;
   height: 275px;
@@ -332,16 +371,15 @@ a {
 .restaurantMenuPicture {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .mainMenuRestaurant {
-  background-color: #f6f6f6;
+  background-color: $color-light;
 }
 
 .restaurantMenuSection {
-  background-color: #f6f6f6;
+  background-color: $color-light;
   border-top-left-radius: 40px;
   border-top-right-radius: 40px;
   padding: 32px 13px;
@@ -352,8 +390,8 @@ a {
 .entryPlateTxt,
 .mainCoursePlateTxt,
 .dessertPlateTxt {
-  font-family: "Roboto", sans-serif;
-  font-size: 16px;
+  font-family: $font-primary;
+  font-size: $font-size-base;
   font-weight: 300;
   text-align: left;
 }
@@ -363,17 +401,16 @@ a {
   margin-top: 40px;
 }
 
+// Plate
 .aPlateDiv {
   width: 100%;
-  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1);
+  @include box-shadow(0px, 4px, 15px, 0px, rgba(0, 0, 0, 0.1));
   position: relative;
   border-radius: 15px;
   margin-bottom: 12px;
   text-align: left;
-  animation: slideInFromRight 0.5s ease-out 0s 1 normal;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include animation(slideInFromRight, 0.5s, ease-out);
+  @include flex-center;
   justify-content: space-between;
   height: 70.5px;
   padding-left: 15px;
@@ -386,16 +423,14 @@ a {
 }
 
 .aPlateName {
-  font-size: 18px;
+  font-size: $font-size-medium;
   font-weight: 500;
 }
 
 .subTxtDiv {
   padding-top: 5px;
   width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flex-center;
 }
 
 .aPlateSubName {
@@ -406,7 +441,7 @@ a {
   margin: 0;
   font-size: 15px;
   width: calc(100% - 59px);
-  transition: width 0.25s ease;
+  @include transition(width);
   font-weight: 300;
 }
 
@@ -422,13 +457,10 @@ a {
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
   background-color: #99E2D0;
-  transition: transform 0.25s ease;
-  transition: width 0.25s ease;
+  @include transition(transform, width);
   height: 100%;
   text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flex-center;
   transform-origin: right center;
   transform: scaleX(0);
   pointer-events: none;
@@ -438,14 +470,15 @@ a {
   display: flex;
   opacity: 1;
   pointer-events: auto;
-  width: 59px; /* Updated */
-  transform: scaleX(1); /* Updated */
+  width: 59px;  /* Updated */
+  transform: scaleX(1);  /* Updated */
 }
 
 .aPlateDiv:hover .aPlateSubName {
   width: 0;
 }
 
+// Hidden Checkbox
 .hidden-checkbox {
   display: none;
   margin: auto;
@@ -459,6 +492,7 @@ a {
     color: blue;
   }
 }
+
 @keyframes unfillAnimation {
   0% {
     color: blue;
@@ -467,33 +501,34 @@ a {
     color: black;
   }
 }
+
 .heartRestaurantPage::before,
 .heartRestaurant::before {
   content: "\f08a";
-  font-family: "Font Awesome 5 Free";
+  font-family: 'Font Awesome 5 Free';
   font-weight: 400;
-  color: #000;
-  transition: color 0.25s ease;
-  transition: 1s 0.25s ease;
+  color: $color-black;
+  @include transition(color, 1s);
   cursor: pointer;
 }
 
 .hidden-checkbox:checked + label .heartRestaurantPage::before,
 .hidden-checkbox:checked + label .heartRestaurant::before {
-  animation: fillAnimation 1s forwards 0s 1 normal;
-  color: linear-gradient(193.33deg, #9356dc -11.44%, #ff79da 123.93%);
+  @include animation(fillAnimation, 1s, forwards);
+  color: linear-gradient(193.33deg, $color-primary -11.44%, $color-secondary 123.93%);
   content: "\f004";
   font-weight: 900;
 }
 
 .hidden-checkbox:not(:checked) + label .heartRestaurantPage::before,
 .hidden-checkbox:not(:checked) + label .heartRestaurant::before {
-  animation: unfillAnimation 1s forwards 0s 1 normal;
-  color: #000;
+  @include animation(unfillAnimation, 1s, forwards);
+  color: $color-black;
   content: "\f08a";
   font-weight: 400;
 }
 
+// Keyframes
 @keyframes slideInFromRight {
   0% {
     opacity: 0;
@@ -504,6 +539,8 @@ a {
     transform: translateX(0);
   }
 }
+
+// Misc
 .menuBar {
   width: 40px;
   height: 3px;
@@ -514,9 +551,7 @@ a {
 }
 
 .footerWithIcon {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flex-center;
 }
 
 .heartRestaurantPage {
@@ -542,7 +577,7 @@ a {
   margin: auto;
   width: 20px;
   height: 20px;
-  color: #fff;
+  color: $color-white;
 }
 
 .bookButton {
@@ -550,18 +585,20 @@ a {
   width: 186px;
   height: 50px;
   border-radius: 25px;
-  background: linear-gradient(193.33deg, #9356dc -11.44%, #ff79da 123.93%);
-  color: #fff;
+  background: linear-gradient(193.33deg, $color-primary -11.44%, $color-secondary 123.93%);
+  color: $color-white;
   cursor: pointer;
-  font-family: "Roboto", sans-serif;
-  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+  font-family: $font-primary;
+  @include box-shadow(0px, 4px, 10px, 0px, rgba(0, 0, 0, 0.25));
 }
 
 .bookButton:hover {
-  background: linear-gradient(200.64deg, #9356dc -5.2%, #ff79da 110.74%), linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15));
-  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.35);
+  background: linear-gradient(200.64deg, $color-primary -5.2%, $color-secondary 110.74%),
+              linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15));
+  @include box-shadow(0px, 4px, 15px, 0px, rgba(0, 0, 0, 0.35));
 }
 
+// Responsive
 .footerMobile {
   display: none;
 }
@@ -591,8 +628,7 @@ a {
   .allRestaurants {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    -moz-column-gap: 100px;
-         column-gap: 100px;
+    column-gap: 100px;
     row-gap: 50px;
   }
   .restaurantSection {
@@ -646,7 +682,7 @@ a {
     width: 1055px;
     padding: 0 210.5px;
     margin: auto;
-    background-color: #f6f6f6;
+    background-color: $color-light;
     margin-top: 383px;
   }
   .heartRestaurantPage {
@@ -658,4 +694,4 @@ a {
     align-items: baseline;
     justify-content: center;
   }
-}/*# sourceMappingURL=style.css.map */
+}
