@@ -495,7 +495,10 @@ a {
 
 @keyframes unfillAnimation {
   0% {
-    color: blue;
+    background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block; /* or inline, depending on your layout needs */
   }
   100% {
     color: black;
@@ -515,7 +518,12 @@ a {
 .hidden-checkbox:checked + label .heartRestaurantPage::before,
 .hidden-checkbox:checked + label .heartRestaurant::before {
   @include animation(fillAnimation, 1s, forwards);
-  color: linear-gradient(193.33deg, $color-primary -11.44%, $color-secondary 123.93%);
+  // color: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+  background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block; /* or inline, depending on your layout needs */
+  // color: linear-gradient(193.33deg, $color-primary -11.44%, $color-secondary 123.93%);
   content: "\f004";
   font-weight: 900;
 }
@@ -662,6 +670,7 @@ a {
   }
   .restaurantMenuName {
     text-align: center;
+    margin-top: 51px;
   }
   .mainMenuRestaurant {
     width: 1055px;
